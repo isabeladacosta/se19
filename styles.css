@@ -1,370 +1,426 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap");
 
 * {
-    /* over-ride everything in the page */
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  /* over-ride everything in the page */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    background-color: #f7f6f4;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f6f4;
 }
 
 /*-------- Nav Bar --------*/
 
-li, a {
-    font-family: 'Lato', sans-serif;
-    color: #313436;
-    text-decoration: none;
+li,
+a {
+  font-family: "Lato", sans-serif;
+  color: #313436;
+  text-decoration: none;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;  /* distribute items evenly the first item is flush with the start, the last is flush with the end */
-    align-items: center;
-    padding: 10px 5%;
-    background-color: #e2ecec;
+  display: flex;
+  justify-content: space-between; /* distribute items evenly the first item is flush with the start, the last is flush with the end */
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #e2ecec;
 }
 
 .fa {
-    padding: 2px;
+  padding: 2px;
 }
 
 .nav_links {
-    list-style: none;
+  list-style: none;
 }
 
 .nav_links li {
-    display: inline-block;
-    padding: 0 10px;
+  display: inline-block;
+  padding: 0 10px;
 }
 
-.nav_links li a{
-    transition: all 0.3s ease 0s;
+.nav_links li a {
+  transition: all 0.3s ease 0s;
 }
 
-.nav_links li a:hover{
-    color: #a5acb0;
+.nav_links li a:hover {
+  color: #a5acb0;
+}
+
+.alertBox {
+  width: 500px;
+  overflow: hidden;
+  background: #f7f6f4;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 30px 50px 20px 50px;
+  text-align: center;
+  display: none;
+}
+
+.alertBox h4 {
+    padding-top: 30px;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /*-------- Title --------*/
 
 .title {
-    text-align: center;
-    text-decoration: underline;
-    letter-spacing: 10px;
-    margin: 50px;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 10px;
+  margin: 50px;
 }
-
 
 /*-------- Slider --------*/
 
 .section_slider {
-    position: relative;
+  position: relative;
 }
 
 slider {
-    display: block;
-    width: 100%;
-    height: 60%;
-    background-color: #e2ecec;
-    overflow: hidden;
-    position: absolute;
+  display: block;
+  width: 100%;
+  height: 60%;
+  background-color: #e2ecec;
+  overflow: hidden;
+  position: absolute;
 }
 
 slider > * {
-    /* styles on each one of the slider element */
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #e2ecec;
-    animation: slide 12s infinite;
-    overflow: hidden;
-} 
+  /* styles on each one of the slider element */
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #e2ecec;
+  animation: slide 12s infinite;
+  overflow: hidden;
+}
 
 slide:nth-child(1) {
-    left: 0%;
-    animation-delay: -1s;
-    background-image: url('images/01.jpeg');
-    background-size: cover;
-    background-position: center;
+  left: 0%;
+  animation-delay: -1s;
+  background-image: url("images/01.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 slide:nth-child(2) {
-    animation-delay: 2s;
-    background-image: url('images/02.jpeg');
-    background-size: cover;
-    background-position: center;
+  animation-delay: 2s;
+  background-image: url("images/02.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 slide:nth-child(3) {
-    animation-delay: 5s;
-    background-image: url('images/03.jpeg');
-    background-size: cover;
-    background-position: center;
+  animation-delay: 5s;
+  background-image: url("images/03.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 slide:nth-child(4) {
-    left: 0%;
-    animation-delay: 8s;
-    background-image: url('images/04.jpeg');
-    background-size: cover;
-    background-position: center;
+  left: 0%;
+  animation-delay: 8s;
+  background-image: url("images/04.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 slide div {
-    background-color: white;
-    width:250px;
-    height: 70px;
-    margin: 40px auto;
-    margin-top: 200px;
-    position: relative;
+  background-color: white;
+  width: 250px;
+  height: 70px;
+  margin: 40px auto;
+  margin-top: 200px;
+  position: relative;
 }
 
 slide h1 {
-    text-align: center;
-    position: relative;
-    margin-top: 50px;
-    transform: translateY(-50%)
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+  transform: translateY(-50%);
 }
 
 slide p {
-    text-align: center;
-    position: relative;
-    transform: translateY(-50%)
+  text-align: center;
+  position: relative;
+  transform: translateY(-50%);
 }
 
 @keyframes slide {
-    0% {
-        left: 100%;
-        width: 100%;
-    }
-    5% {
-        left: 0%
-    }
-    25% {
-        left: 0%
-    }
-    30% {
-        left: -100%;
-        width: 100%
-    }
-    30.0001% {
-        left: -100%;
-        width: 0%
-    }
-    100% {
-        left: 100%;
-        width: 0%
-    }
+  0% {
+    left: 100%;
+    width: 100%;
+  }
+  5% {
+    left: 0%;
+  }
+  25% {
+    left: 0%;
+  }
+  30% {
+    left: -100%;
+    width: 100%;
+  }
+  30.0001% {
+    left: -100%;
+    width: 0%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
 }
-  
 
 /*-------- Section One --------*/
 
 section {
-    display: block;
-    position: relative;
-    margin: 50px 100px;
+  display: block;
+  position: relative;
+  margin: 50px 100px;
 }
 
 .container_secOne {
-    display: grid;
-    grid-template-columns:  auto auto;
-    justify-content: center;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  padding: 10px;
 }
 
 .item_secOne {
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
 
 .item_secOne p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .item_secOne_first {
-    background-color: white;
-    width: 500px;
-    padding: 15px;
-    transform: translateX(-50px);
+  background-color: white;
+  width: 500px;
+  padding: 15px;
+  transform: translateX(-50px);
 }
 
 .item_secOne_second {
-    background-color: white;
-    width: 700px;
-    padding: 25px 40px;
-    margin: 40px 0 0 40px;
-    height: 170px;
+  background-color: white;
+  width: 700px;
+  padding: 25px 40px;
+  margin: 40px 0 0 40px;
+  height: 170px;
 }
 
 .item_secOne_second p {
-    text-align: left;
+  text-align: left;
 }
 
 #text_secOne {
-    transform: translateY(-60px);
+  transform: translateY(-60px);
 }
 
 .img_secOne {
-    background-image: url('images/01.jpeg');
-    background-size: cover;
-    background-position: center;
-    width: 300px;
-    height: 300px;
-    transform: translate(25px, -25px);
+  background-image: url("images/01.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 300px;
+  transform: translate(25px, -25px);
 }
 
 .img2_secOne {
-    border: 3px solid #313436;
-    width: 300px;
-    height: 300px;
+  border: 3px solid #313436;
+  width: 300px;
+  height: 300px;
 }
 
 /*--------  Section Two --------*/
 
 .title_sec2 {
-    background-color: white;
-    width: 200px;
-    padding: 15px;
-    margin-left: 30px;
-    text-align: center;
-    transform: translate(170px, 40px);
-    text-decoration: underline;
+  background-color: white;
+  width: 200px;
+  padding: 15px;
+  margin-left: 30px;
+  text-align: center;
+  transform: translate(170px, 40px);
+  text-decoration: underline;
 }
 
 .container_sec2 {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
 
 .column_sec2 {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
 
 .column_sec2 img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
 .column_sec2 img:hover {
-    opacity: 0.5;
-    cursor: pointer;
-    transition: 0.3s ease 0s;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.3s ease 0s;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media (max-width: 800px) {
-    .column_sec2 {
-      flex: 50%;
-      max-width: 50%;
-    }
+  .column_sec2 {
+    flex: 50%;
+    max-width: 50%;
   }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media (max-width: 600px) {
-    .column_sec2 {
-      flex: 100%;
-      max-width: 100%;
-    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column_sec2 {
+    flex: 100%;
+    max-width: 100%;
   }
+}
 
 /*-------- Parallax --------*/
 
 .parallax {
-    margin: 100px 0;
-    background-image: url('images/03.jpeg');
-    opacity: 0.5;
-    min-height: 250px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  margin: 100px 0;
+  background-image: url("images/03.jpeg");
+  opacity: 0.5;
+  min-height: 250px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /*-------- Contact --------*/
 
 .contact_container {
-    display: flex;
-    justify-content: stretch;
-    border: 2px solid #313436;
-    margin: 80px;
+  display: flex;
+  justify-content: stretch;
+  border: 2px solid #313436;
+  margin: 80px;
 }
 
 .contact_title {
-    margin-top:0px;
-    margin-bottom: 25px;
-    text-decoration: underline;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  text-decoration: underline;
 }
 
 .contact_pt1 {
-    width: 400px;
-    padding: 120px 30px 50px 30px;
-    text-align: center;
-    font-size: 16px;
-    border-right: 2px solid #313436;
+  width: 400px;
+  padding: 120px 30px 50px 30px;
+  text-align: center;
+  font-size: 16px;
+  border-right: 2px solid #313436;
 }
 
 .contact_pt2 {
-    width: 100%;
-    padding: 30px 50px;
-    text-align: center;
-    font-size: 30px;
+  width: 100%;
+  padding: 30px 50px;
+  text-align: center;
+  font-size: 30px;
 }
 
 label {
-    font-size: 16px;
-    display: block;
-    text-align: left;
-    margin-top: 10px;
+  font-size: 16px;
+  display: block;
+  text-align: left;
+  margin-top: 10px;
 }
 
-input[type=text], input[type=submit], input[type=button], textarea {
-    width: 100%;
-    padding: 6px 10px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #313436;
-    background-color: #f7f6f4;
-  }
-
-input[type=submit],input[type=button] {
-    font-size: 16px;
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+input[type="button"],
+textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #313436;
+  background-color: #f7f6f4;
 }
 
-input[type=button] {
-    width: 100px;
-    font-size: 14px;
-    background-color: #ffffff;
-    margin: 20px 0px;
+input[type="submit"],
+input[type="button"] {
+  font-size: 16px;
 }
 
-input[type=submit]:hover, input[type=button]:hover {
-    background-color: #313436;
-    color: #f7f6f4;
-    transition: all 0.3s ease 0s;
+input[type="button"] {
+  width: 100px;
+  font-size: 14px;
+  background-color: #ffffff;
+  margin: 20px 0px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: #313436;
+  color: #f7f6f4;
+  transition: all 0.3s ease 0s;
 }
 
 /*-------- Footer --------*/
 
 footer {
-    text-align: center;
-    font-size: 14px;
-    background-color: #e2ecec;
-    padding: 8px;
-    color: #313436;
+  text-align: center;
+  font-size: 14px;
+  background-color: #e2ecec;
+  padding: 8px;
+  color: #313436;
 }
 
+
+/*-------- Create PAGE --------*/
+
+
+#posts-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.containerCreateForm {
+    margin: 0 200px
+}
+
+.create_posts {
+    margin: 30px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+}
+
+.create_posts img {
+    width: 100%;
+    
+}
+
+.create_posts h2, p {
+    margin: 10px;
+}
 /*
 //colors
 blue: #e2ecec;

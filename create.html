@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>SE19</title>
+</head>
+<body>
+    <header>
+        <div class="nav_LeftSide">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a>
+        </div>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li id="createProject"></li>
+            </ul>
+        </nav>
+        <div class="nav_RightSide">
+            <a id="popLogin" style="cursor: pointer"></a>
+            <a id="popLogout" style="cursor: pointer"></a>
+        </div>
+    </header>
+
+    <div class="alertBox" id='loginBox'>
+        <form id="loginForm">
+            <label for="user">E-mail:</label>
+            <input type="email" value="isabela@mail.com" id="nameLogin">
+            <label for="pass">Password:</label>
+            <input type="text"  value="123456" id="emailLogin">
+            <input type="submit" value="Log In" id="btnLogin">
+        </form>
+        <h4 id="closeBtn">close</h4>
+    </div>
+    
+    <div class="title">
+        <h1>OCEANOID</h1>
+    </div>
+
+    <section>
+        <div class="container">
+            <div id="posts-collection">
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div class="containerCreateForm">
+        <form id="create_form">
+            <h2 style="text-decoration: underline; margin-bottom: 30px">Create Post</h2>
+            <div class="row_form">
+                <label for="">Title</label>
+                <input type="text" value="Title" id="title">
+            </div>
+            <div class="row_form">
+                    <label for="">Image</label>
+                    <input type="text" value="https://i.imgur.com/Tw447mA.jpg" id="picture">
+                </div>
+            <div class="row_form">
+                <label for="">Content</label>
+                <textarea rows="10" cols="50" id="content" value="Write the content of your pot here!"></textarea>
+            </div>
+            <input type="button" value="Send" id="submitPost">
+        </form>
+    </div>
+    </section>
+
+
+    <footer>
+        all rights reserved | website created by Isabela Costa for <strong>SE_19 Assessment</strong>.
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script type="text/javascript" src="create.js"></script>
+</body>
+</html>

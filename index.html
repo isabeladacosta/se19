@@ -19,16 +19,41 @@
         </div>
         <nav>
             <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Projects</a></li>
-                <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact</a></li>
+                <li id="createProject"></li>
             </ul>
         </nav>
         <div class="nav_RightSide">
-            <i class="fa fa-search"></i>
+            <a id="popLogin" style="cursor: pointer"></a>
+            <a id="popLogout" style="cursor: pointer"></a>
         </div>
     </header>
+
+    <div class="alertBox" id='loginBox'>
+        <form id="loginForm">
+            <label for="user">E-mail:</label>
+            <input type="email" value="isabela@mail.com" id="nameLogin">
+            <label for="pass">Password:</label>
+            <input type="text"  value="123456" id="emailLogin">
+            <input type="submit" value="Log In" id="btnLogin">
+        </form>
+        <h4 id="closeBtn">close</h4>
+    </div>
+
+    <div class="alertBox" id='logoutBox'>
+            <h2>logged out successfully!</h2>
+            <h4 id="closeBtnOut">close</h4>
+    </div>
+
+    <!--
+    <div class="alertBox" id='messageSentBox'>
+            <h2>Message sent!</h2>
+            <h4 id="closeBtnOut">close</h4>
+    </div>
+    -->
     
     <div class="title">
         <h1>OCEANOID</h1>
@@ -40,6 +65,8 @@
         <slide><div><h1>lorem ipsum</h1><p>consectetur adipiscing elit.</p></div></slide>
         <slide><div><h1>lorem ipsum</h1><p>consectetur adipiscing elit.</p></div></slide>
     </slider>
+
+    <div style="height: 65vh;"></div>
 
     <section>
         <div class="container_secOne">
@@ -107,12 +134,12 @@
             </div>
             <div class="contact_pt2">
                 <form id="contact_form">
-                    <label for="fname">Name:</label>
-                    <input type="text" name="firstname" value="Mickey">
-                    <label for="femail">E-mail:</label>
-                    <input type="text" name="lastname" value="Mouse">
-                    <textarea name="message" rows="10" cols="50">The cat was playing in the garden.</textarea>
-                    <input type="submit" value="Send">
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="Mickey" id="name">
+                    <label for="email">E-mail:</label>
+                    <input type="email" placeholder="mickey@mouse.com" id="email">
+                    <textarea rows="10" cols="50" id="textMessage" placeholder="Your message here. Would love to hear what you have to say!"></textarea>
+                    <input type="submit" value="Send" id="submitForm">
                 </form> 
             </div>
         </div>
@@ -122,6 +149,10 @@
         all rights reserved | website created by Isabela Costa for <strong>SE_19 Assessment</strong>.
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
