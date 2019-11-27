@@ -20,9 +20,9 @@
         <nav>
             <ul class="nav_links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
                 <li id="createProject"></li>
             </ul>
         </nav>
@@ -61,15 +61,15 @@
             <h2 style="text-decoration: underline; margin-bottom: 30px">Create Post</h2>
             <div class="row_form">
                 <label for="">Title</label>
-                <input type="text" value="Title" id="title">
+                <input type="text" value="Title" id="title-post">
             </div>
             <div class="row_form">
                     <label for="">Image</label>
-                    <input type="text" value="https://i.imgur.com/Tw447mA.jpg" id="picture">
+                    <input type="text" value="https://i.imgur.com/Tw447mA.jpg" id="picture-post">
                 </div>
             <div class="row_form">
                 <label for="">Content</label>
-                <textarea rows="10" cols="50" id="content" value="Write the content of your pot here!"></textarea>
+                <textarea rows="10" cols="50" id="content-post" value="Write the content of your pot here!"></textarea>
             </div>
             <input type="button" value="Send" id="submitPost">
         </form>
@@ -83,8 +83,6 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script type="text/javascript" src="create.js"></script>
 </body>
 </html>

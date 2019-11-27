@@ -1,22 +1,21 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBSF4CH_vdyRrXycp6BtO4TuHutC46Ghiw",
-    authDomain: "se19-blog.firebaseapp.com",
-    databaseURL: "https://se19-blog.firebaseio.com",
-    projectId: "se19-blog",
-    storageBucket: "se19-blog.appspot.com",
-    messagingSenderId: "805688627328",
-    appId: "1:805688627328:web:69873c8a88051d8654d665"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-var dbPosts = firebase.firestore().collection('posts');
+apiKey: "AIzaSyBSF4CH_vdyRrXycp6BtO4TuHutC46Ghiw",
+authDomain: "se19-blog.firebaseapp.com",
+databaseURL: "https://se19-blog.firebaseio.com",
+projectId: "se19-blog",
+storageBucket: "se19-blog.appspot.com",
+messagingSenderId: "805688627328",
+appId: "1:805688627328:web:69873c8a88051d8654d665"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 var postCollection = document.getElementById('posts-collection');
 
-var submitPost = document.getElementById('submitPost');
-submitPost.addEventListener("click", newPost);
+const db = firebase.firestore();
+
+console.log(db.collection('posts').doc());
 
 //create post
 function createPost(title, image, content) {
@@ -38,33 +37,11 @@ function createPost(title, image, content) {
     postCollection.appendChild(div);
 }
 
-//new post
-function newPost() {  
-    var title = document.getElementById('title').value; 
-    var image = document.getElementById('picture').value; 
-    var content = document.getElementById('content').value;
-
-    if(
-        title === '' ||
-        image === '' ||
-        content === '' 
-    ) {
-        alert('Fields empty')
-    } else {
-        dbPosts.doc().set({
-            postName: title,
-            postImg: image,
-            postContent: content
-        })
-    }
-
-    location.reload();
-}
-
-
 //get posts
 function getPosts() {
-    dbPosts.get().then(snapshot => {
+    db.collection('posts')
+    .get()
+    .then(snapshot => {
         snapshot.docs.forEach(docs => {
             createPost(
                 docs.data().postName,
@@ -78,3 +55,38 @@ function getPosts() {
 }
 
 getPosts();
+
+//new post
+var submitPost = document.getElementById('submitPost');
+submitPost.addEventListener('click', newPost);
+
+function newPost() {      
+    var title = document.getElementById('title-post').value; 
+    var image = document.getElementById('picture-post').value; 
+    var content = document.getElementById('content-post').value;
+
+    console.log(title);
+    if(
+        title === '' ||
+        image === '' ||
+        content === '' 
+    ) {
+        alert('Fields empty')
+    } else {
+        db.collection('posts').doc().set({
+            postContent: content,
+            postImg: image,
+            postName: title  
+        })
+
+        setTimeout(function(){ 
+            location.reload();
+        }, 1000);
+        
+    }
+
+   // 
+}
+
+
+

@@ -54,7 +54,12 @@ window.onload = function(){
     var createProject = document.getElementById('createProject');
     createProject.innerHTML = '';
 
-    //var messageSentBox = document.getElementById('messageSentBox');
+    var popupBG = document.getElementById('popupBG');
+
+    var messageSentBox = document.getElementById('messageSentBox');
+
+    var btnClose = document.getElementById('btnCloseMessage');
+    btnClose.addEventListener("click", closeMess);
 
     //user authentication
     firebase.auth().onAuthStateChanged(function(user) {
@@ -71,23 +76,34 @@ window.onload = function(){
 
     //open login box
     function pop() {
+        console.log('oi');
         loginBox.style.display = 'block';
+        popupBG.style.display = 'block';
     }
 
     //close login box
     function close() {
         loginBox.style.display = 'none';
+        popupBG.style.display = 'none';
     }
 
     //close logout box
     function closeOut() {
         logoutBox.style.display = 'none';
+        popupBG.style.display = 'none';
         location.reload();
     }
 
+    function closeMess() {
+        messageSentBox.style.display = 'none';
+        popupBG.style.display = 'none';
+    }
+
     function logout() {
+        console.log('oi');
         firebase.auth().signOut();
         logoutBox.style.display = 'block';
+        popupBG.style.display = 'block';
     }
 
     function showText() {
@@ -112,6 +128,7 @@ window.onload = function(){
           });
 
           loginBox.style.display = 'none';
+          popupBG.style.display = 'none';
     };
 
     //submit contact form
@@ -128,8 +145,8 @@ window.onload = function(){
             alert('Fields empty');
         } else {
             saveMessage(name, email, message);
-            alert('Message sent!');
-            //messageSentBox.style.display = 'block';
+            messageSentBox.style.display = 'block';
+            popupBG.style.display = 'block';
             //clean form input values
             form.reset();
         }
