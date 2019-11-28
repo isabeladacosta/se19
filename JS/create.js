@@ -17,6 +17,12 @@ const db = firebase.firestore();
 
 console.log(db.collection('posts').doc());
 
+var alertMessage = document.getElementById('alertMessage');
+
+var alertCloseButton = document.getElementById('alertCloseButton');
+alertCloseButton.addEventListener("click", fail);
+
+
 //create post
 function createPost(title, image, content) {
     var div = document.createElement('div');
@@ -71,7 +77,8 @@ function newPost() {
         image === '' ||
         content === '' 
     ) {
-        alert('Fields empty')
+        alertMessage.style.display = 'block';
+        popupBG.style.display = 'block';
     } else {
         db.collection('posts').doc().set({
             postContent: content,
@@ -84,9 +91,9 @@ function newPost() {
         }, 1000);
         
     }
-
-   // 
 }
 
-
-
+function fail() {
+    alertMessage.style.display = 'none';
+    popupBG.style.display = 'none';
+}

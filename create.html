@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <title>SE19</title>
 </head>
 <body>
@@ -32,15 +32,12 @@
         </div>
     </header>
 
-    <div class="alertBox" id='loginBox'>
-        <form id="loginForm">
-            <label for="user">E-mail:</label>
-            <input type="email" value="isabela@mail.com" id="nameLogin">
-            <label for="pass">Password:</label>
-            <input type="text"  value="123456" id="emailLogin">
-            <input type="submit" value="Log In" id="btnLogin">
-        </form>
-        <h4 id="closeBtn">close</h4>
+    <div class="alertBox" id='alertMessage'>
+        <h2>please fill in all the fields :)</h2>
+        <h4 id="alertCloseButton">close</h4>
+    </div>
+
+    <div id="popupBG">
     </div>
     
     <div class="title">
@@ -83,6 +80,6 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
-    <script type="text/javascript" src="create.js"></script>
+    <script type="text/javascript" src="JS/create.js"></script>
 </body>
 </html>

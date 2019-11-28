@@ -61,6 +61,11 @@ window.onload = function(){
     var btnClose = document.getElementById('btnCloseMessage');
     btnClose.addEventListener("click", closeMess);
 
+    var alertMessage = document.getElementById('alertMessage');
+
+    var alertCloseButton = document.getElementById('alertCloseButton');
+    alertCloseButton.addEventListener("click", fail);
+
     //user authentication
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -76,7 +81,6 @@ window.onload = function(){
 
     //open login box
     function pop() {
-        console.log('oi');
         loginBox.style.display = 'block';
         popupBG.style.display = 'block';
     }
@@ -100,10 +104,14 @@ window.onload = function(){
     }
 
     function logout() {
-        console.log('oi');
         firebase.auth().signOut();
         logoutBox.style.display = 'block';
         popupBG.style.display = 'block';
+    }
+
+    function fail() {
+        alertMessage.style.display = 'none';
+        popupBG.style.display = 'none';
     }
 
     function showText() {
@@ -119,10 +127,8 @@ window.onload = function(){
         var password = emailLogin.value;
 
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            // ...
 
             alert('error');
           });
@@ -142,7 +148,9 @@ window.onload = function(){
         if (name === '' ||
             email === '' ||
             message === '') {
-            alert('Fields empty');
+            
+            alertMessage.style.display = 'block';
+            popupBG.style.display = 'block';
         } else {
             saveMessage(name, email, message);
             messageSentBox.style.display = 'block';
