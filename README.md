@@ -12,6 +12,8 @@ To build this website I used HTML, CSS and JavaScript. I had the help of online 
 This website is not live because it's not ready yet. There are still a couple of otimizations and customizations that I would like to do before calling it "100% ready".
 
 
+
+
 //////Navigation
 
 1. To open the website please click on the 'index.html' document.
